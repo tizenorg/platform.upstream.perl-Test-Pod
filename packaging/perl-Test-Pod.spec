@@ -25,21 +25,17 @@ License:        Artistic-2.0 or GPL-2.0
 Summary:        check for POD errors in files
 Url:            http://search.cpan.org/dist/Test-Pod/
 Group:          Development/Libraries/Perl
-#Source:         http://www.cpan.org/authors/id/D/DW/DWHEELER/Test-Pod-%{version}.tar.gz
 Source:         http://www.cpan.org/authors/id/D/DW/DWHEELER/%{cpan_name}-%{version}.tar.gz
 BuildRequires:  perl
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Pod::Simple) >= 3.05
 BuildRequires:  perl(Test::More) >= 0.62
-BuildRequires:  perl-macros
 Requires:       perl(File::Spec)
 Requires:       perl(Pod::Simple) >= 3.05
 Requires:       perl(Test::Builder::Tester) >= 1.02
 Requires:       perl(Test::More) >= 0.62
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
-%{perl_requires}
 
 %description
 Check POD files for errors or warnings in a test file, using 'Pod::Simple'
@@ -61,6 +57,5 @@ perl Build.PL installdirs=vendor
 
 %files -f %{name}.files
 %defattr(644,root,root,755)
-%doc Changes README
 
 %changelog
