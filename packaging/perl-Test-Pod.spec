@@ -26,6 +26,7 @@ Summary:        check for POD errors in files
 Url:            http://search.cpan.org/dist/Test-Pod/
 Group:          Development/Libraries/Perl
 Source:         http://www.cpan.org/authors/id/D/DW/DWHEELER/%{cpan_name}-%{version}.tar.gz
+Source1001: 	perl-Test-Pod.manifest
 BuildRequires:  perl
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(Module::Build)
@@ -43,6 +44,7 @@ to do the heavy lifting.
 
 %prep
 %setup -q -n %{cpan_name}-%{version}
+cp %{SOURCE1001} .
 
 %build
 perl Build.PL installdirs=vendor
@@ -56,6 +58,7 @@ perl Build.PL installdirs=vendor
 %perl_gen_filelist
 
 %files -f %{name}.files
+%manifest %{name}.manifest
 %defattr(644,root,root,755)
 
 %changelog
